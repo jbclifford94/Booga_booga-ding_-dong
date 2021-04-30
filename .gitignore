@@ -1,0 +1,7 @@
+.terraform/*
+ansible/backup-playbook.yml
+ansible/cred.yml
+ansible/terraform.tfstate
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfvars
