@@ -1,0 +1,6 @@
+---
+app_user: "ubuntu"
+http_host: "butthole_servers"
+http_conf: "bigdickmcgee.conf"
+http_port: "80"
+disable_default: true
