@@ -18,7 +18,7 @@ resource "aws_instance" "web1" {
   ami               = data.aws_ami.ubuntu.id # us-east-2
   instance_type     = "t2.micro"
   availability_zone = "us-east-2a"
-  key_name          = "wub-aws"
+  key_name          = "TheJoggingCactus_"
   subnet_id         = aws_subnet.subnet_public.id
   security_groups   = [aws_security_group.ssh_anywhere.id]
   tags = {
@@ -30,7 +30,7 @@ resource "aws_instance" "web2" {
   ami               = data.aws_ami.ubuntu.id # us-east-2
   instance_type     = "t2.micro"
   availability_zone = "us-east-2c"
-  key_name          = "wub-aws"
+  key_name          = "TheJoggingCactus_"
   #  subnet_id       = aws_subnet.web-sub.id
   #  security_groups = [aws_security_group.web-node-sg.id]
   tags = {
