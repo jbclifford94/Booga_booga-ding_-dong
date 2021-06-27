@@ -9,7 +9,7 @@ data "aws_ami" "ubuntu" {
   filter {
     name   = "virtualization-type"
     values = ["hvm"]
-}
+  }
 
   owners = ["099720109477"] # Canonical
 }
@@ -19,8 +19,8 @@ resource "aws_instance" "web1" {
   instance_type     = "t2.micro"
   availability_zone = "us-east-2a"
   key_name          = "wub-aws"
-  #  subnet_id       = aws_subnet.web-sub.id
-  #  security_groups = [aws_security_group.web-node-sg.id]
+  subnet_id         = aws_subnet.subnet_public.id
+  security_groups   = [aws_security_group.ssh_anywhere.id]
   tags = {
     Name = "web1"
   }
