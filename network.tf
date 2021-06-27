@@ -11,11 +11,18 @@ resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.good_vpc.id
 }
 
-resource "aws_subnet" "subnet_public" {
+resource "aws_subnet" "subnet_use2a_public" {
   vpc_id                  = aws_vpc.good_vpc.id
   cidr_block              = "10.1.0.0/24"
   map_public_ip_on_launch = "true"
   availability_zone       = "us-east-2a"
+}
+
+resource "aws_subnet" "subnet_use2c_public" {
+  vpc_id                  = aws_vpc.good_vpc.id
+  cidr_block              = "10.1.2.0/24"
+  map_public_ip_on_launch = "true"
+  availability_zone       = "us-east-2c"
 }
 
 resource "aws_route_table" "rtb_public" {
@@ -27,7 +34,7 @@ resource "aws_route_table" "rtb_public" {
 }
 
 resource "aws_route_table_association" "rta_subnet_public" {
-  subnet_id      = aws_subnet.subnet_public.id
+  subnet_id      = aws_subnet.subnet_use2a_public.id
   route_table_id = aws_route_table.rtb_public.id
 }
 resource "aws_eip" "good_IP" {
@@ -36,7 +43,7 @@ resource "aws_eip" "good_IP" {
 
 resource "aws_nat_gateway" "nat_GW" {
   allocation_id = aws_eip.good_IP.id
-  subnet_id     = aws_subnet.subnet_public.id
+  subnet_id     = aws_subnet.subnet_use2a_public.id
 }
 resource "aws_security_group" "ssh_anywhere" {
   vpc_id = aws_vpc.good_vpc.id
