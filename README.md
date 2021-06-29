@@ -12,3 +12,4 @@ Todo next:
 5. Deploy prometheus and/or cloudwatch monitoring.
 6. Use Hashicorp Vault or Jenkins to setup secret management.
 7. Setup log rotation with ELK stack
+8. Setup ansible patching
