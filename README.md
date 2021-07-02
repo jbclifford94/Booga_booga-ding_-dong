@@ -24,6 +24,7 @@ Simple AWS apache2 web servers running on ubuntu 20.04 being load balanced by an
 	AWS_access_key_secret = "Your AWS key secret"
 	```
 - Run ```terraform init && terraform apply```
+- Make sure terraform_key.pem has permission ```chmod 400 /path/to/key/terraform_key.pem```
 
 ## Ansible
 - Run ```ansible-vault create cred.yml``` to create a file in the ./ansible folder. Add the following to that file:
@@ -35,3 +36,4 @@ Simple AWS apache2 web servers running on ubuntu 20.04 being load balanced by an
 - To edit your cred.yml, run ```ansible-vault edit cred.yml```
 - Check that your ```/etc/ansible/ansible.cfg``` file is using the correct key
 - Check that your ```/etc/ansible/hosts``` file is using the correct IPs for your EC2 instances
+- To deploy your playbook run ```ansible-playbook playbook.yml --ask-vault-pass```
