@@ -42,4 +42,4 @@ Simple AWS apache2 web servers running on ubuntu 20.04 being load balanced by an
 - To deploy your playbook run ```ansible-playbook playbook.yml --ask-vault-pass```
 
 ## Test
-- Go to your domain. In our instance that is joshclifford.com
+- Go to your domain. In our instance that is <a href="joshclifford.com">joshclifford.com</a>
