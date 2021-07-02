@@ -24,7 +24,7 @@ Simple AWS apache2 web servers running on ubuntu 20.04 being load balanced by an
 	AWS_access_key_id     = "Your AWS access key"
 	AWS_access_key_secret = "Your AWS key secret"
 	```
-- Make sure the ```route54.tf``` file has the correct zone_id and domain name
+- Make sure the ```route53.tf``` file has the correct zone_id and domain name
 - Run ```terraform init && terraform apply```
 - Make sure terraform_key.pem has permission ```chmod 400 /path/to/key/terraform_key.pem```
 
@@ -42,4 +42,4 @@ Simple AWS apache2 web servers running on ubuntu 20.04 being load balanced by an
 - To deploy your playbook run ```ansible-playbook playbook.yml --ask-vault-pass```
 
 ## Test
-- Go to your load balancer's DNS name and see if it round robins
+- Go to your domain. In our instance that is joshclifford.com
