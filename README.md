@@ -33,3 +33,5 @@ Simple AWS apache2 web servers running on ubuntu 20.04 being load balanced by an
 	secret_key: [Your AWS key secret. No brackets]
 	```	
 - To edit your cred.yml, run ```ansible-vault edit cred.yml```
+- Check that your ```/etc/ansible/ansible.cfg``` file is using the correct key
+- Check that your ```/etc/ansible/hosts``` file is using the correct IPs for your EC2 instances
