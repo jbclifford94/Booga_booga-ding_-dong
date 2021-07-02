@@ -36,4 +36,8 @@ Simple AWS apache2 web servers running on ubuntu 20.04 being load balanced by an
 - To edit your cred.yml, run ```ansible-vault edit cred.yml```
 - Check that your ```/etc/ansible/ansible.cfg``` file is using the correct key
 - Check that your ```/etc/ansible/hosts``` file is using the correct IPs for your EC2 instances
+- Check that your ```/path/to/playbook.yml``` file is using the correct host IPs
 - To deploy your playbook run ```ansible-playbook playbook.yml --ask-vault-pass```
+
+## Test
+- Go to your load balancer's DNS name and see if it round robins
