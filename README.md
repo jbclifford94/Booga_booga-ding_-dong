@@ -9,12 +9,13 @@ Simple AWS apache2 web servers running on ubuntu 20.04 being load balanced by an
 	-ec2.tf: key<br>
 	-alb.tf: sg and subnets
 3. Setup terraform variables
-4. Use EKS to deploy an ops cluster (promtheues, alertmanager, grafana, blackbox, Jenkins, Elasticsearch, filebeats, Kibana)
-5. Deploy prometheus (cAdvisor for k8s monitoring?)and/or cloudwatch monitoring.
-6. Use Hashicorp Vault or Jenkins to setup secret management.
-7. Setup log rotation with ELK stack
-8. Setup ansible patching
-9. Terraform/AWS resource discovery (possibly https://registry.terraform.io/providers/hashicorp/oci/latest/docs/guides/resource_discovery)
+4. Route53 for domain joshclifford.com
+5. Use EKS to deploy an ops cluster (promtheues, alertmanager, grafana, blackbox, Jenkins, Elasticsearch, filebeats, Kibana)
+6. Deploy prometheus (cAdvisor for k8s monitoring?)and/or cloudwatch monitoring.
+7. Use Hashicorp Vault or Jenkins to setup secret management.
+8. Setup log rotation with ELK stack
+9. Setup ansible patching
+10. Terraform/AWS resource discovery (possibly https://registry.terraform.io/providers/hashicorp/oci/latest/docs/guides/resource_discovery)
 
 ## Terraform
 - Create a ```terraform.tfvars``` file in the same directory as all the other terraform files. Add to following to that file:
@@ -23,6 +24,7 @@ Simple AWS apache2 web servers running on ubuntu 20.04 being load balanced by an
 	AWS_access_key_id     = "Your AWS access key"
 	AWS_access_key_secret = "Your AWS key secret"
 	```
+- Make sure the ```route54.tf``` file has the correct zone_id and domain name
 - Run ```terraform init && terraform apply```
 - Make sure terraform_key.pem has permission ```chmod 400 /path/to/key/terraform_key.pem```
 
