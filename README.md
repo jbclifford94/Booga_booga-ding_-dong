@@ -26,7 +26,7 @@ Simple AWS apache2 web servers running on ubuntu 20.04 being load balanced by an
 - Run ```terraform init && terraform apply```
 
 ## Ansible
-- run ```ansible-vault create cred.yml``` to create a file in the ./ansible folder. Add the following to that file:
+- Run ```ansible-vault create cred.yml``` to create a file in the ./ansible folder. Add the following to that file:
 	
 	```
 	access_key: [Your AWS access key. No brackets]
