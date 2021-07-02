@@ -43,3 +43,4 @@ Simple AWS apache2 web servers running on ubuntu 20.04 being load balanced by an
 
 ## Test
 - Go to your domain. In our instance that is http://www.joshclifford.com
+- If you need to ssh into one of your web servers after destroying/applying you may need to run ```ssh-keygen -R web1.joshclifford.com``` or ```ssh-keygen -R web2.joshclifford.com``` to get rid of your old known hosts
