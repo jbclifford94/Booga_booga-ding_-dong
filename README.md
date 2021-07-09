@@ -16,6 +16,7 @@ Simple AWS apache2 web servers running on ubuntu 20.04 being load balanced by an
 8. Setup log rotation with ELK stack
 9. Setup ansible patching
 10. Terraform/AWS resource discovery (possibly https://registry.terraform.io/providers/hashicorp/oci/latest/docs/guides/resource_discovery)
+11. Do the thing with Superlinter
 
 ## Terraform
 - Create a ```terraform.tfvars``` file in the same directory as all the other terraform files. Add to following to that file:
