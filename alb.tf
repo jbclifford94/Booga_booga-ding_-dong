@@ -2,8 +2,8 @@ resource "aws_lb" "web-alb" {
   name               = "web-alb"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = ["sg-47e16833"]
-  subnets            = ["subnet-229f2249", "subnet-bae0b3f6"]
+  security_groups    = [aws_security_group.ssh_anywhere.id]
+  subnets            = [aws_subnet.subnet_use2a_public.id, aws_subnet.subnet_use2c_public.id]
 
 
   enable_deletion_protection = false
@@ -19,7 +19,7 @@ resource "aws_lb_target_group" "web-tg" {
   port        = 80
   protocol    = "HTTP"
   target_type = "instance"
-  vpc_id      = "vpc-9eed78f5"
+  vpc_id      = aws_vpc.good_vpc.id
 }
 
 resource "aws_alb_listener" "web-alb-listener" {
