@@ -37,7 +37,21 @@ Simple AWS apache2 web servers running on ubuntu 20.04 being load balanced by an
 	secret_key: [Your AWS key secret. No brackets]
 	```	
 - To edit your cred.yml, run ```ansible-vault edit cred.yml```
-- Check that your ```/etc/ansible/ansible.cfg``` file is using the correct key
+- Check that your ```/etc/ansible/ansible.cfg``` file is using the correct key and has the following:
+```
+[defaults]
+host_key_checking = false
+remote_user = ubuntu
+ask_pass = false
+private_key_file = /pathto/terraform_key.pem
+roles_path = /root/aws-ansible/roles
+
+[privilege_escalation]
+become=True
+become_method=sudo
+become_user=root
+become_ask_pass=False
+```
 - Check that your ```/etc/ansible/hosts``` file is using the correct IPs for your EC2 instances
 - Check that your ```/path/to/playbook.yml``` file is using the correct host IPs
 - To deploy your playbook run ```ansible-playbook playbook.yml --ask-vault-pass```
