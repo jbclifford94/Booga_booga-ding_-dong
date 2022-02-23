@@ -37,6 +37,12 @@ resource "aws_route_table_association" "rta_subnet_public" {
   subnet_id      = aws_subnet.subnet_use2a_public.id
   route_table_id = aws_route_table.rtb_public.id
 }
+
+resource "aws_route_table_association" "rta_subnet_public2" {
+  subnet_id      = aws_subnet.subnet_use2c_public.id
+  route_table_id = aws_route_table.rtb_public.id
+}
+
 resource "aws_eip" "good_IP" {
   vpc = true
 }
